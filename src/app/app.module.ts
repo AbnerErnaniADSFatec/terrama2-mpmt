@@ -7,10 +7,12 @@ import { PDFExportModule } from '@progress/kendo-angular-pdf-export';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TableModule } from 'primeng/table';
+import { RelatorioComponent } from './relatorio/relatorio.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RelatorioComponent
   ],
   imports: [
     BrowserModule,

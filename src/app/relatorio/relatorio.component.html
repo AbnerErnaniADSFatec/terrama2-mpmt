@@ -1,0 +1,62 @@
+<div class = "pageWrapper">
+  <div class = "content">
+    <!-- <div class = "form">
+      <p>Município: <input type= "text" [(ngModel)] = "relatorio.municipio"></p>
+      <p>Comarca: <input type = "text" [(ngModel)] = "relatorio.comarca"></p>
+      <p>Fazenda: <input type = "text" [(ngModel)] = "relatorio.fazenda"></p>
+      <div class = "card p-4">
+        <div class = "form-group">
+          <label class = "h4 mb-3" for = "">Image &nbsp;</label>
+          <input type = "file" class = "form-control-file" (change) = "fileChanged($event)" aria-describedby = "fileHelpId">
+        </div>
+      </div>
+    </div> -->
+    <kendo-pdf-export #pdf paperSize = "A4" margin = "3cm">
+      <div class = "size-a4">
+        <p><span>NOTÍCIA DE FATO SIMP:</span></p>
+        <p><span>MUNICÍPIO: </span>{{ relatorio.municipio }}</p>
+        <p><span>COMARCA: </span>{{ relatorio.comarca }}</p>
+        <p class = "title-green">NOME DO PROJETO – TCT 30/2018 MP/INPE</p>
+        <p class = "title">RELATÓRIO Nº 00000/2019</p>
+        <p>{{ relatorio.topico[0] }}</p><br>
+        <p class = "corpo">
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          {{ relatorio.corpo[0] }}
+          <span class = "destaque">FAZENDA {{ relatorio.fazenda }}</span>&nbsp;
+          {{ relatorio.corpo[1] }}
+        </p>
+        <div align = "center">
+          <img style = "width: 80%; height: 80%;" src = "assets/img/mpmt.jpg"/>
+        </div>
+        <div align = "center">
+          <p>Quadro 1 - Classes e quantitativos de áreas desmatadas na Fazenda<span class = "destaque">FAZENDA {{ relatorio.fazenda }}</span>&nbsp;</p><br>
+          <p-table [value] = "relatorio.areaDesmatada">
+            <ng-template pTemplate = "header">
+              <tr>
+                <th>Área atingida</th>
+                <th>Desmatamento recente (DETER - n° de alertas)</th>
+                <th>Desmatamento pretérito (PRODES - ha ano-1)</th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate = "body" let-dado>
+              <tr>
+                <td>{{ dado.area }}</td>
+                <td>{{ dado.deter }}</td>
+                <td>{{ dado.prodes }}</td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </div>
+      </div>
+    </kendo-pdf-export>
+    <div class = "footer">
+      <button kendo-button (click) = "pdf.saveAs('relatorio.pdf')">
+        Baixar relatório em PDF
+      </button>
+      &nbsp;
+      <button (click) = "generatePdf('open')">
+        Visualizar relatório em PDF
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,99 @@
+.pageWrapper {
+    margin-top: 50px;
+}
+
+button {
+    padding: 15px;
+}
+
+.content {
+  width: 800px;
+  margin: 0 auto;
+  line-height: 20px;
+}
+
+span {
+  font-weight: bold;
+}
+
+.title-green {
+    color: green;
+    text-align: center;
+    padding: 1pt;
+}
+
+.title {
+    text-align: center;
+}
+
+.corpo {
+    text-align: justify;
+}
+
+.form {
+    padding: 20pt;
+}
+
+.destaque {
+    background-color: yellow;
+    padding: 1pt;
+}
+
+.k-pdf-export p {
+  border: 2px dashed #aaa;
+  padding: 10px;
+}
+
+.footer {
+  padding: 20pt;
+  text-align: center;
+}
+
+kendo-pdf-export {
+  font-size: 12px;
+  font-family: 'Arial Unicode MS';
+}
+
+.row{
+  padding: 10px;
+}
+
+.card{
+  margin: 10px;
+}
+
+.material-icons{
+  font-size: 30px;
+}
+
+button span{
+  font-size: 22px;
+}
+
+.action-buttons button{
+  margin : 5px;
+}
+
+@font-face {
+  font-family: "DejaVu Sans";
+  src: url("https://kendo.cdn.telerik.com/2019.3.1023/styles/fonts/DejaVu/DejaVuSans.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "DejaVu Sans";
+  font-weight: bold;
+  src: url("https://kendo.cdn.telerik.com/2019.3.1023/styles/fonts/DejaVu/DejaVuSans-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "DejaVu Sans";
+  font-style: italic;
+  src: url("https://kendo.cdn.telerik.com/2019.3.1023/styles/fonts/DejaVu/DejaVuSans-Oblique.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "DejaVu Sans";
+  font-weight: bold;
+  font-style: italic;
+  src: url("https://kendo.cdn.telerik.com/2019.3.1023/styles/fonts/DejaVu/DejaVuSans-Oblique.ttf") format("truetype");
+}
