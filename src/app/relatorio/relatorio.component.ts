@@ -42,6 +42,60 @@ export class RelatorioComponent implements OnInit {
     this.relatorio.areaDesmatada = [];
     this.relatorio.images = [];
   }
+  
+  async getBase64ImageFromUrl(imageUrl) {
+    var res = await fetch(imageUrl);
+    var blob = await res.blob();
+    return new Promise((resolve, reject) => {
+      var reader  = new FileReader();
+      reader.addEventListener("load", function () {
+          resolve(reader.result);
+      }, false);
+  
+      reader.onerror = () => {
+        return reject(this);
+      };
+      reader.readAsDataURL(blob);
+    })
+  }
+
+  async getBaseImageUrl(url: string) {
+    var baseImage = [];
+    await this.getBase64ImageFromUrl(url)
+    .then(
+      result => {
+        baseImage.push(result);
+        console.log(result);
+      }
+    ).catch(
+      err =>
+        console.error(err)
+    );
+    console.log(baseImage);
+    return baseImage;
+  }
+
+  toDataUrl(file, callback) {
+    var xhr = new XMLHttpRequest();
+      xhr.responseType = 'blob';
+      xhr.onload = function() {
+        var reader = new FileReader();
+        reader.onloadend = function() {
+        callback(reader.result);
+      }
+      reader.readAsDataURL(xhr.response);
+    };
+    xhr.open('GET', file);
+    xhr.send();
+  }
+
+  getBaseImage(fileLocation: string) {
+    var baseImage = [];
+    this.toDataUrl(fileLocation, function(base64Image){
+      baseImage.push(base64Image);
+    });
+    return baseImage;
+  }
 
   generatePdf(action = 'open') {
     const documentDefinition = this.getDocumentDefinition();
