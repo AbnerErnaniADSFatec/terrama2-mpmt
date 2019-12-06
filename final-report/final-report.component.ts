@@ -105,7 +105,7 @@ export class FinalReportComponent implements OnInit {
         )
     }
     */
-    // this.image64geoserver = await this.getBaseImageUrl('http://www.terrama2.dpi.inpe.br/mpmt/geoserver/wms?service=WMS&version=1.1.0&request=GetMap&layers=terrama2_5:view5&styles=&bbox=-57.2847452,-12.59399277,-56.90282508,-12.30850863&width=404&height=431&time=2019-01-01T02:00:00.000Z/2019-11-19T17:48:36.257Z&cql_filter=numero_do1=%27MT97914/2017%27&srs=EPSG:4674&format=image/png');
+    this.image64geoserver = await this.getBaseImageUrl('http://www.terrama2.dpi.inpe.br/mpmt/geoserver/wms?service=WMS&version=1.1.0&request=GetMap&layers=terrama2_5:view5&styles=&bbox=-57.2847452,-12.59399277,-56.90282508,-12.30850863&width=404&height=431&time=2019-01-01T02:00:00.000Z/2019-11-19T17:48:36.257Z&cql_filter=numero_do1=%27MT97914/2017%27&srs=EPSG:4674&format=image/png');
     this.image64mpmt = await this.getBaseImageUrl('https://raw.githubusercontent.com/AbnerErnaniADSFatec/terrama2-mpmt/master/src/assets/img/mpmt.jpg');
     this.image64mpmt2 = await this.getBaseImageUrl('https://raw.githubusercontent.com/AbnerErnaniADSFatec/terrama2-mpmt/master/src/assets/img/geoserver2.png');
     this.image64mpmt3 = await this.getBaseImageUrl('https://raw.githubusercontent.com/AbnerErnaniADSFatec/terrama2-mpmt/master/src/assets/img/geoserver3.png');
